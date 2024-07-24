@@ -1,0 +1,13 @@
+__pycache__
+experiments/
+data/
+data*/
+cache/
+result/
+temp/
+docs/
+files/
+gen_images/
+related/
+src/clip/
+backup/
