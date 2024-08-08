@@ -1,0 +1,6 @@
+## prompt improvement task, using Antonym Space
+task_name: attack
+sspace: synonym
+constraint:
+  fn: cos_t5
+  thresh: 0.9

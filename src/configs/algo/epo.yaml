@@ -1,0 +1,8 @@
+epo: # evolutionary-based prompt optimization
+  explore: 0
+  select_num: 10
+  population_num: 20
+  m_prob: 0.1
+  crossover_num: 10
+  mutation_num: 10
+  num_samples: 40

@@ -1,0 +1,5 @@
+gpo: # gradient-based prompt optimization
+  num_iters: 20  ## effective budget = 8 samples
+  best: 3
+  num_samples: 32
+  t: "step-15-2"
