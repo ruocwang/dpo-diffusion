@@ -294,8 +294,6 @@ They can be found under `./scripts` folder.
 
 ## Known Limitations and Followup Works
 
-We position DPO-Diff as an experimental attempt to solve prompt optimization prollem for diffusion models under search-based paradigm, and we expect many limitations for this preliminary work. Below are two areas we identified while exploring DPO-Diff, which leads to some follow-up papers:
-
 We position DPO-Diff as an experimental approach to address prompt optimization problems for diffusion models within a search-based framework.
 As preliminary work, it comes with several limitations. Here are two specific areas we've explored while working on DPO-Diff, leading to subsequent research:
 
