@@ -344,13 +344,13 @@ For practitioners looking to apply DPO-Diff on their problems, we suggest using 
 > [MuLan: Multimodal-LLM Agent for Progressive and Interactive Multi-Object Diffusion](https://arxiv.org/abs/2402.12741)<br>
 > Sen Li, Ruochen Wang, Cho-Jui Hsieh, Minhao Cheng, Tianyi Zhou
 
-> [Promptist](https://huggingface.co/microsoft/Promptist)<br>
+> [Optimizing Prompts for Text-to-Image Generation](https://arxiv.org/abs/2212.09611)<br>
 > Yaru Hao, Zewen Chi, Li Dong, Furu Wei
 
 ## Acknowledgements
 
 The codebase is developed by directly modifying the [diffusers](https://huggingface.co/docs/diffusers/en/index) library.
-The authors would like to thank our colleague, Liangzhe Yuan, Long Zhao, and Han Zhang's valuable inputs and help during the author's internship.
+The authors would like to thank our colleagues, Liangzhe Yuan, Long Zhao, and Han Zhang, for their valuable input and help during the author's internship.
 
 ---
 
