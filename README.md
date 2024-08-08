@@ -50,6 +50,10 @@ Official implementation of [DPO-Diff](https://arxiv.org/abs/2407.01606v1), accep
 </table>
 
 
+# TODOs
+- [ ] Example hard Prompts for adversarial attack
+
+
 # 📝 Preparations
 
 🛠️ **1. Setup Environment**
@@ -115,7 +119,6 @@ To avoid repeatedly querying LLMs for during the experiments, we pre-generate th
 > bash build_search_space.sh --name antonym --prompt_path <path/to/prompt/file> --model gpt-4 --mode keyword
 > ```
 
-> Here
 > - `--name` is the name of the space, which could be antonym or synonym.
 > - `--model` specifies which LLM model (gpt-4 or gpt-3.5-turbo) to use for generating the word substitutes
 > - `--mode`: the "default" mode will ask LLMs to propose subsitutes for all words, whereas the "keyword" mode focuses only on the keywords in the user prompt.
@@ -176,21 +179,21 @@ Corpse
 We've prepared the following script to run DPO-Diff with Hybrid Prompt Optimizer (HPO), Gradient-based Prompt Optimizer (GPO) and Evolution-based Prompt Optimizer (EPO).
 They can be found under `./scripts` folder.
 
->**EPO: Evolution-based Prompt Optimizer**
+**HPO Hybrid Prompt Optimizer**
 >```Bash
 >bash run-improve.sh \
 >  --algo_config hybrid.yaml.yaml \
 >  --task_config improve-antonym/improve-nplib.yaml \
 >  --path [path/to/pregenerated/space]
-```
+>```
 
 **EPO: Evolution-based Prompt Optimizer**
-```Bash
+>```Bash
 >bash run-improve.sh \
 >  --algo_config epo.yaml.yaml \
 >  --task_config improve-antonym/improve-nplib.yaml.yaml \
 >  --path [path/to/pregenerated/space]
-```
+>```
 
 **GPO: Gradient-based Prompt Optimizer**
 >```Bash
@@ -200,7 +203,6 @@ They can be found under `./scripts` folder.
 >  --path [path/to/pregenerated/space]
 >```
 
-> Here are the main argument supported by this script.
 > - `--gpu` specifies the GPU id. Defaults to "auto", which allows the script to automatically select the GPU with lowest memory usage.
 > - `--version` is the Stable Diffusion version. Defaults to "v1-4"
 > - `--path` is path to the file that stores pre-generated search space.
@@ -260,7 +262,7 @@ The generated synonym space for each prompt is stored in the following json form
 We've prepared the following script to run DPO-Diff with Hybrid Prompt Optimizer (HPO), Gradient-based Prompt Optimizer (GPO) and Evolution-based Prompt Optimizer (EPO).
 They can be found under `./scripts` folder.
 
->**EPO: Evolution-based Prompt Optimizer**
+**HPO Hybrid Prompt Optimizer**
 >```Bash
 >bash run-attack.sh \
 >  --algo_config hybrid.yaml \
