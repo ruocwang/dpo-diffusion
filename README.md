@@ -36,7 +36,7 @@ Official implementation of [DPO-Diff](https://arxiv.org/abs/2407.01606v1), accep
 - Readily applicable to both **Prompt Improvement** and **Adversarial Attack** tasks
 - Can Optimize both **Positive Prompts** and **Negative Prompts**
 - Support a variety of diffusion model backbones
-- Include both **white-box** (gradient-based) and **black-box** (evolution-based) optimization algorithms.
+- Include both **White-box** (gradient-based) and **Black-box** (evolution-based) optimization algorithms.
 
 
 <!-- <table class="center">
@@ -49,10 +49,10 @@ Official implementation of [DPO-Diff](https://arxiv.org/abs/2407.01606v1), accep
   </tr> -->
 </table>
 
-
-# TODOs
+#### TODOs
 - [ ] Example hard Prompts for adversarial attack
 
+---
 
 # 📝 Preparations
 
@@ -288,17 +288,17 @@ They can be found under `./scripts` folder.
 
 
 
+---
 
 
-
-# Known Limitations and Related Work
+## Known Limitations and Followup Works
 
 We position DPO-Diff as an experimental attempt to solve prompt optimization prollem for diffusion models under search-based paradigm, and we expect many limitations for this preliminary work. Below are two areas we identified while exploring DPO-Diff, which leads to some follow-up papers:
 
 We position DPO-Diff as an experimental approach to address prompt optimization problems for diffusion models within a search-based framework.
 As preliminary work, it comes with several limitations. Here are two specific areas we've explored while working on DPO-Diff, leading to subsequent research:
 
-## How does negative prompt work in text-to-image generation?
+### How does negative prompt work in text-to-image generation?
 
 Negative Prompts are widely adopted in practical applications of diffusion models.
 While DPO-Diff has shown that optimizing these prompts can enhance image generation, the mechanism behind their effectiveness remains unclear.
@@ -307,7 +307,7 @@ Our following analytical efforts aim to shed light on this question:
 > [Understanding the Impact of Negative Prompts: When and How Do They Take Effect?](https://arxiv.org/abs/2406.02965)<br>
 > Yuanhao Ban, Ruochen Wang, Tianyi Zhou, Minhao Cheng, Boqing Gong, Cho-Jui Hsieh
 
-## Bias in the initial noise map
+### Bias in the initial noise map
 
 Diffusion model takes a Gaussian random noise map as input, and progressively denoising it to generate an image.
 We've noticed that for some noise maps, altering the text prompt cannot change some image fundamental attributes, such as layout and objectiveness. This observation led us to investigate whether the initial noises trigger inherent biases in the diffusion model.
@@ -317,28 +317,23 @@ Our findings are detailed in the subsequent paper:
 > Yuanhao Ban, Ruochen Wang, Tianyi Zhou, Boqing Gong, Cho-Jui Hsieh, Minhao Cheng
 
 
-# Suggestion to DPO-Diff users
+---
 
-## 📉 **Loss Function Improvements**
+## Suggestion to DPO-Diff users
+
+### 📉 **Loss Function Improvements**
 
 Our released version utilizes the open-sourced CLIP model to measure the alignment between image and text. However, it's important to note that CLIP can often deviate from human judgment, therefore misleading the solver.
 To enhance the robustness of the solvers, adopting a more powerful alignment model will be beneficial.
 
-## 🔄 **Algorithm Selection**
+### 🔄 **Algorithm Selection**
 
 The gradient-based solver (GPO), in its current stage, is primarily useful for academic exploration due to its complexity.
 For practitioners looking to apply DPO-Diff on their problems, we suggest using the EPO solver instead of Hybrid solver. EPO is much simpler to implement/adapt, without requiring to modify the model's internals, and also consumes fewer computational resources, making it a more practical choice.
 
+---
 
-
-
-# Acknowledgements
-
-The codebase is developed by directly modifying the [diffusers](https://huggingface.co/docs/diffusers/en/index) library.
-The authors would like to thank our colleague, Liangzhe Yuan, Long Zhao, and Han Zhang's valuable inputs and help during the author's internship.
-
-
-# Related work
+## 🔗 Related papers
 
 > [Understanding the Impact of Negative Prompts: When and How Do They Take Effect?](https://arxiv.org/abs/2406.02965)<br>
 > Yuanhao Ban, Ruochen Wang, Tianyi Zhou, Minhao Cheng, Boqing Gong, Cho-Jui Hsieh
@@ -346,14 +341,20 @@ The authors would like to thank our colleague, Liangzhe Yuan, Long Zhao, and Han
 > [The Crystal Ball Hypothesis in diffusion models: Anticipating object positions from initial noise](https://arxiv.org/abs/2406.01970)<br>
 > Yuanhao Ban, Ruochen Wang, Tianyi Zhou, Boqing Gong, Cho-Jui Hsieh, Minhao Cheng
 
-> [MuLan: Multimodal-LLM Agent for Progressive and Interactive Multi-Object Diffusion](https://arxiv.org/abs/2402.12741)
+> [MuLan: Multimodal-LLM Agent for Progressive and Interactive Multi-Object Diffusion](https://arxiv.org/abs/2402.12741)<br>
 > Sen Li, Ruochen Wang, Cho-Jui Hsieh, Minhao Cheng, Tianyi Zhou
 
-> [Promptist](https://huggingface.co/microsoft/Promptist)
+> [Promptist](https://huggingface.co/microsoft/Promptist)<br>
 > Yaru Hao, Zewen Chi, Li Dong, Furu Wei
 
+## Acknowledgements
 
-# 📖BibTeX
+The codebase is developed by directly modifying the [diffusers](https://huggingface.co/docs/diffusers/en/index) library.
+The authors would like to thank our colleague, Liangzhe Yuan, Long Zhao, and Han Zhang's valuable inputs and help during the author's internship.
+
+---
+
+## 📖BibTeX
 ```
 @inproceedings{wang2024discrete,
   title={On Discrete Prompt Optimization for Diffusion Models},
@@ -363,11 +364,3 @@ The authors would like to thank our colleague, Liangzhe Yuan, Long Zhao, and Han
 }
 ```
 
-
-
-
-
-
-
-2. final cleaning
-    . path
