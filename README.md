@@ -51,6 +51,7 @@ Official implementation of [DPO-Diff](https://arxiv.org/abs/2407.01606v1), accep
 
 #### TODOs
 - [ ] Example hard Prompts for adversarial attack
+- [ ] Visualizations for README
 
 ---
 
