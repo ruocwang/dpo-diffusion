@@ -49,13 +49,34 @@ Official implementation of [DPO-Diff](https://arxiv.org/abs/2407.01606v1), accep
   </tr> -->
 </table>
 
+## Table of Contents
+
+1. [Preparations](#preparations)
+2. [Running DPO-Diff](#running-dpo-diff)
+    - [😇 Optimizing Negative Prompt for Prompt Improvement Task](#-optimizing-negative-prompt-for-prompt-improvement-task)
+        - [1. Generate Search Space](#1-generate-search-space)
+        - [2. Run Search](#2-run-search)
+    - [😈 Optimizing Positive Prompt for Adversarial Task](#-optimizing-positive-prompt-for-adversarial-task)
+        - [1. Generate Search Space](#1-generate-search-space-1)
+        - [2. Run Search](#2-run-search-1)
+3. [Known Limitations and Followup Works](#known-limitations-and-followup-works)
+    - [🤔 How does negative prompt work in text-to-image generation?](#-how-does-negative-prompt-work-in-text-to-image-generation)
+    - [🔍 Bias in the initial noise map](#-bias-in-the-initial-noise-map)
+4. [Suggestion to DPO-Diff users](#suggestion-to-dpo-diff-users)
+    - [📉 Loss Function Improvements](#-loss-function-improvements)
+    - [🔄 Algorithm Selection](#-algorithm-selection)
+5. [Related papers](#related-papers)
+6. [Acknowledgements](#acknowledgements)
+7. [BibTeX](#bibtex)
+   
+
 #### TODOs
 - [ ] Example hard Prompts for adversarial attack
 - [ ] Visualizations for README
 
 ---
 
-# 📝 Preparations
+# Preparations
 
 🛠️ **1. Setup Environment**
 
@@ -96,7 +117,7 @@ DPO-Diff with evolution-based algorithm can run on GPUs with only 8-9G memory.
 
 
 
-# Run DPO-Diff
+# Running DPO-Diff
 
 ## **😇 Optimizing Negative Prompt for Prompt Improvement Task**
 
@@ -297,7 +318,7 @@ They can be found under `./scripts` folder.
 We position DPO-Diff as an experimental approach to address prompt optimization problems for diffusion models within a search-based framework.
 As preliminary work, it comes with several limitations. Here are two specific areas we've explored while working on DPO-Diff, leading to subsequent research:
 
-### How does negative prompt work in text-to-image generation?
+### 🤔 How does negative prompt work in text-to-image generation?
 
 Negative Prompts are widely adopted in practical applications of diffusion models.
 While DPO-Diff has shown that optimizing these prompts can enhance image generation, the mechanism behind their effectiveness remains unclear.
@@ -306,7 +327,7 @@ Our following analytical efforts aim to shed light on this question:
 > [Understanding the Impact of Negative Prompts: When and How Do They Take Effect?](https://arxiv.org/abs/2406.02965)<br>
 > Yuanhao Ban, Ruochen Wang, Tianyi Zhou, Minhao Cheng, Boqing Gong, Cho-Jui Hsieh
 
-### Bias in the initial noise map
+### 🔍 Bias in the initial noise map
 
 Diffusion model takes a Gaussian random noise map as input, and progressively denoising it to generate an image.
 We've noticed that for some noise maps, altering the text prompt cannot change some image fundamental attributes, such as layout and objectiveness. This observation led us to investigate whether the initial noises trigger inherent biases in the diffusion model.
@@ -332,7 +353,7 @@ For practitioners looking to apply DPO-Diff on their problems, we suggest using 
 
 ---
 
-## 🔗 Related papers
+## Related papers
 
 > [Understanding the Impact of Negative Prompts: When and How Do They Take Effect?](https://arxiv.org/abs/2406.02965)<br>
 > Yuanhao Ban, Ruochen Wang, Tianyi Zhou, Minhao Cheng, Boqing Gong, Cho-Jui Hsieh
@@ -353,7 +374,7 @@ The authors would like to thank our colleagues, Liangzhe Yuan, Long Zhao, and Ha
 
 ---
 
-## 📖BibTeX
+## BibTeX
 ```
 @inproceedings{wang2024discrete,
   title={On Discrete Prompt Optimization for Diffusion Models},
