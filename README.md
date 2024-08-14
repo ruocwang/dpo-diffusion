@@ -13,7 +13,7 @@
 
 Official implementation of [DPO-Diff](https://arxiv.org/abs/2407.01606v1), accepted by ICML 2024.
 
-> [**[ICML 2024] On Discrete Prompt Optimization for Diffusion Models**](https://arxiv.org/abs/2407.01606v1)
+> [**[ICML 2024] On Discrete Prompt Optimization for Diffusion Models**](https://arxiv.org/abs/2407.01606v1)<br>
 > [Ruochen Wang](https://ruocwang.github.io/),
 > [Ting Liu](http://www.tliu.org/),
 > [Cho-Jui Hsieh](https://web.cs.ucla.edu/~chohsieh/),
